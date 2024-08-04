@@ -21,7 +21,7 @@ class array_list {
         
         void Construtor() {
             capacity_ = 100;
-            size_ = 0;
+            size_ = sizeof(data) / sizeof(data[0]);
             data = new int[capacity_];
         }; //Construtor
         ~array_list() {
@@ -56,8 +56,22 @@ class array_list {
             return true;
     }
         void push_back(int value) {
-            increase_capacity()
-            for (int t = 0; t < size_ - 1 
+            increase_capacity();
+            for (int t = 0; t < size_ - 1; t++) {
+                data[t] = data[t + 1];
+            }
+            data[size_] = value;
+        }
+
+        void push_front(int value) {
+            increase_capacity();
+            for (int t = size_; t > size_; --t) {
+                data[t] = data[t - 1];
+            }
+            data[0] = value;
+        }
+
+
         
 };
 
