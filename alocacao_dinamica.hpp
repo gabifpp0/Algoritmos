@@ -42,15 +42,23 @@ class array_list {
 
         bool insert_at(unsigned int index, int value) {           
             if (index >= 0 && index < size_) { // Verifica se o index bate com o tamanho do array
-                for (int t = size_ - 1; t > index; --t) { // Move os elementos para do lado até chegar ao valor de index
-                    data[t] = data[t - 1]; // Move os elementos para do lado até chegar ao valor de index
+                for (int t = size_ - 1; t > index; --t) { // Percorre os elementos até que t ser maior que index 
+                    data[t] = data[t - 1]; // Redefine os valores dos elementos e os move para a direita durante o loop
                 }
             }
                 data[index] = value; // Insere o valor no index
             }
         bool remove_at(unsigned int index) {
-            return 0;
+             for (int t = index; t < size_ - 1; t++) { // 
+                data[t] = data[t + 1]; 
+            }
+            size_--;
+            return true;
     }
+        void push_back(int value) {
+            increase_capacity()
+            for (int t = 0; t < size_ - 1 
+        
 };
 
 #endif 
