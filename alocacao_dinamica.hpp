@@ -71,8 +71,28 @@ class array_list {
             data[0] = value;
         }
 
-
+        void clear() {
+            delete [] data;
+            capacity_ = 100;
+            data = new int[capacity_];
+        }
         
-};
+        int back() {
+            return data[size_];
+        }
 
+        int front() {
+            return data[0];
+        }
+};
+        bool remove(int value) {
+            
+        }
+
+        int sum(int value){
+            for (i = 0; i < size_, i++) {
+                value += data[i]
+            }
+            return value;
+        }
 #endif 
