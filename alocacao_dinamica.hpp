@@ -49,16 +49,16 @@ class array_list {
                 data[index] = value; // Insere o valor no index
             }
         bool remove_at(unsigned int index) {
-             for (int t = index; t < size_ - 1; t++) { // 
-                data[t] = data[t + 1]; 
+             for (int t = index; t < size_ - 1; t++) { // Percorre os valores até t ser igualado a size - 1
+                data[t] = data[t + 1]; // Substitui valores a partir do inder já que t = index, e os move para a esquerda 
             }
-            size_--;
+            size_--; // Reajusta o tamanho do array diminuindo
             return true;
     }
         void push_back(int value) {
             increase_capacity();
-            for (int t = 0; t < size_ - 1; t++) {
-                data[t] = data[t + 1];
+            for (int t = 0; t < size_ - 1; t++) { //
+                data[t] = data[t + 1]; //
             }
             data[size_] = value;
         }
@@ -69,6 +69,14 @@ class array_list {
                 data[t] = data[t - 1];
             }
             data[0] = value;
+        }
+
+        bool pop_back() {
+
+        }
+
+        bool pop_front() {
+
         }
 
         void clear() {
@@ -87,6 +95,10 @@ class array_list {
 };
         bool remove(int value) {
             
+        }
+
+        int find () {
+
         }
 
         int sum(int value){
